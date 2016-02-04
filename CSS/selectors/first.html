@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <style>
+        /*descendant selector*/
+        div p {
+            color: red;
+        }
+        /*  Adjacent selector
+            It will select only the element that is immediately preceded by the former element.
+            In this case, only the first paragraph after each ul will have red text.
+        */
+        ul + p {
+            color: red;
+        }
+        /* Child selector
+            The difference between the standard X Y and X > Y is that
+            the latter will only select direct children.*/
+        #container3 > ul {
+            border: 1px solid black;
+        }
+        /* Sibling combinator
+            This sibling combinator is similar to X + Y, however, it's less strict.
+            It will select all element that is preceded by the former element.
+            In this case, any p elements, as long as they follow by an a.
+        */
+        a ~ p {
+            color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+<p>Descendant selector</p>
+<div id="container1">
+    <p> My paragraph here. </p>
+    <ul>
+        <li> List Item 1</li>
+        <li> List Item 2</li>
+    </ul>
+
+    <ul>
+        <li class="warning">Something went Wrong </li>
+        <li> List Item 4</li>
+    </ul>
+</div>
+
+<p> Paragraph outside of div </p>
+
+<p>Adjacent selector</p>
+
+<div id="container2">
+    <ul>
+        <li> List Item </li>
+        <li> List Item </li>
+        <li> List Item </li>
+        <li> List Item </li>
+    </ul>
+
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+<p>Child selector</p>
+
+<div id="container3">
+    <ul>
+        <li> List Item
+            <ul>
+                <li> Child </li>
+            </ul>
+        </li>
+        <li> List Item </li>
+        <li> List Item </li>
+        <li> List Item </li>
+    </ul>
+
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+<div id="container4">
+    <ul>
+        <li> List Item
+            <ul>
+                <li> Child </li>
+            </ul>
+        </li>
+        <li> List Item </li>
+        <li> List Item </li>
+        <li> List Item </li>
+    </ul>
+
+    <a>Test</a>
+
+    <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+
+</body>
+</html>

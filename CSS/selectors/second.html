@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS Selector2</title>
+    <style>
+        /*The star designates that the proceeding value must appear somewhere in the attribute's value.*/
+        a[href*="tuts"] {
+        color: red;
+        }
+        /*This pseudo class will only target a user interface element that has been checked*/
+        input[type=radio]:checked + label {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container1">
+    <ul>
+        <li> List Item
+            <ul>
+                <li> Child </li>
+            </ul>
+        </li>
+        <li> List Item </li>
+        <li> List Item </li>
+        <li> List Item </li>
+    </ul>
+
+    <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a href="http://nettuts.com">Nettuts</a> tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+    <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+
+<form>
+    <input type="radio" name="rad" value="Radio Button">
+    <label for="rad"> Radio Button</label>
+</form>
+
+</body>
+</html>
